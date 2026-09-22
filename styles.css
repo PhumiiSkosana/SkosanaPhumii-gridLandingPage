@@ -1,0 +1,393 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(224, 100%, 95%) ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:hsl(224, 100%, 95%);
+}
+ 
+
+
+/*DESKTOP DESIGN*/
+.outter-wrap{
+    max-width:1440px;
+    width:100%;
+    height:540px;
+    margin: 0 auto;
+    background-color: hsl(228, 100%, 56%) ;
+}
+.grid{
+    width:100%;
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    height:80%;
+    outline: 2.4px solid  hsl(224, 100%, 95%,0.4);
+    transform: translateY(8px);
+}
+#hero{
+    grid-column: 1;
+    grid-row: 1/ span 2;
+}
+
+#hero{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width:70%;
+    transform: translateX(32px);
+    font-size: large;
+    
+    
+}
+section:hover{
+    background-color:hsl(228, 100%, 60%);
+    cursor: pointer;
+
+}
+
+#students, #schools{
+    border-bottom:1.5px solid hsl(224, 100%, 95%, 0.4) ;
+}
+#students, #teachers{
+    border-right: 1.5px solid hsl(224, 100%, 95%, 0.4);
+    border-left: 1.5px solid hsl(224, 100%, 95%, 0.4);
+}
+
+.statistics{
+    transform: translateY(9px);
+
+}
+.stat-numbers{
+    font-size: 1.3rem;
+    margin-left: 190px;
+    margin-right: 0;
+    margin-top: 0;
+}
+h2{
+    font-size: 16px;
+}
+.stat-info p{
+    font-size: 14px;
+}
+.stat-info{
+    transform: translateY(94px);
+}
+.grid, .stats, section, .statistics, .icons{
+    background-color: transparent;
+}
+img.icons{
+    width: 1.3rem;
+    height: 1.3rem;
+    mix-blend-mode: screen;
+}
+
+ul.nav >li::marker{
+    font-size: 1.8rem;
+
+}
+ul.nav{
+    transform: translateY(10px);
+}
+
+.menu-panel summary, .menu-close-img summary{
+    cursor: pointer;
+    list-style: none;
+}
+
+.menu-img{
+    transform: translate(1112px, -520px);
+    width:1.8rem;
+    height: 1.8rem;
+    
+}
+.menu-close-img{
+    transform: translate(1104px, -520px);
+    display: none;
+    width:1.8rem;
+    height: 1.8rem;
+}
+details[open] .menu-img{
+    display: none;
+}
+details[open] .menu-close-img{
+    display: inline-block;
+}
+body:has(details[open]) section{
+    pointer-events: none;
+}
+body:has(details[open]) .grid{
+    background-color: hsl(228, 100%, 41%);
+    transition: all 0.7s ease-in-out 0.01s;
+}
+details[open] .icons{
+    mix-blend-mode: screen;
+}
+details[open] .menu{
+    animation-name: slide-in;
+    animation-duration: 0.5s;
+}
+@keyframes slide-in {
+    from{
+        translate: 80vw 0;
+        scale:40% 1;
+    }
+    to{
+        translate:80vw 0;
+        scale: 40% 1;
+    }
+}
+
+
+.menu-info{
+    display: inline-block;
+    transform: translate(864px, -540.8px) ;
+    height:485px;
+    width:25%;
+    
+    background-color: hsl(228, 100%, 56%) ;
+    
+}
+ul.menu-info > li{
+    list-style: none;
+    text-emphasis-color: hsl(0, 0%, 100%);
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+.menu-info a{
+    color: hsl(224, 100%, 95%);
+    text-decoration: none;
+}
+.menu-info a:hover{
+    text-decoration: underline;
+
+}
+
+
+.footer{
+    justify-content:space-between;
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-2px);
+
+}
+#right,#left{
+    padding:4px 4px;
+    display: inline-block;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    transform: translateY(-3.2rem);
+}
+.attribution a { color: hsl(224, 100%, 95%); }
+
+
+
+
+/*MOBILE DESIGN*/
+ @media screen and (max-width:480px) {
+    body{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .outter-wrap{
+        max-width:400px;
+        width: 100%;
+        max-height:900px;
+        height: max-content;
+        margin: 0 auto;
+        background-color: hsl(228, 100%, 56%) ;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .grid{
+        width:370px;
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5,2fr);
+        height:90%;
+        outline: 2.4px solid  hsl(224, 100%, 95%,0.4);
+        transform: translateY(8px);
+    }
+    #hero{
+        display:inline-block;
+        align-items: center;
+        font-weight: normal;
+    
+        font-size: 1rem;
+        transform: translateY(-10px);
+
+        
+    }
+    
+    section:hover{
+        background-color:hsl(228, 100%, 60%);
+        cursor: pointer;
+
+    }
+
+    #students, #schools, #teachers{
+        border-bottom:1.5px solid hsl(224, 100%, 95%, 0.4) ;
+    }
+    #students{
+        border-top: 1.5px solid hsl(224, 100%, 95%, 0.4);
+    }
+    #students, #schools, #hero, #teachers, #graduation{
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .statistics{
+        transform: translateY(9px);
+
+    }
+    .stat-numbers{
+        font-size: 1.6rem;
+        margin-left: 190px;
+        margin-right: 0;
+        margin-top: 0;
+    }
+    h2{
+        font-size: 18px;
+
+    }
+    .stat-info p{
+        font-size: 14px;
+    }
+    section h2, section p{
+        transform: translateY(96px);
+    }
+    .stat-info{
+        transform: translateY(94px);
+    }
+    
+    img.icons{
+        width: 2rem;
+        height: 2rem;
+        
+    }
+
+    ul.nav >li::marker{
+        font-size: 1.8rem;
+
+    }
+    ul.nav{
+        transform: translateY(10px);
+    }
+
+    .menu-panel summary, .menu-close-img summary{
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .menu-img{
+        transform: translate(325px, -1280px);
+        width:1.8rem;
+        height: 1.8rem;
+        
+    }
+    .menu-close-img{
+        transform: translate(325px, -1280px);
+        display: none;
+        width:1.8rem;
+        height: 1.8rem;
+    }
+    details[open] .menu-img{
+        display: none;
+    }
+    details[open] .menu-close-img{
+        display: inline-block;
+    }
+    body:has(details[open]) section{
+        pointer-events: none;
+    }
+    body:has(details[open]) .grid{
+        background-color: hsl(228, 81%, 45%);
+        transition: all 0.7s ease-in-out 0.01s;
+    }
+    details[open] .icons{
+        mix-blend-mode: screen;
+    }
+    details[open] .menu{
+        animation-name: slide-in;
+        animation-duration: 0.5s;
+    }
+    @keyframes slide-in {
+        from{
+            translate: 80vw 0;
+            scale:40% 1;
+        }
+        to{
+            translate:80vw 0;
+            scale: 40% 1;
+        }
+    }
+
+
+    .menu-info{
+        display: inline-block;
+        transform: translate(0px, -1295px) ;
+        /*height:fit-content;*/
+        height:228px;
+        width:100%;
+        
+        background-color: hsl(228, 100%, 56%) ;
+        
+    }
+    ul.menu-info > li{
+        list-style: none;
+        text-emphasis-color: hsl(0, 0%, 100%);
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    .menu-info a{
+        color: hsl(224, 100%, 95%);
+        text-decoration: none;
+    }
+    .menu-info a:hover{
+        text-decoration: underline;
+
+    }
+
+
+    .footer{
+        display: inline-block;
+        padding: 0;
+        transform: translateY(-2px);
+        
+
+    }
+    
+    #left{
+        transform: translateY(-34px);
+    }
+    
+
+    .attribution { 
+        font-size: 11px; 
+        text-align: center; 
+        transform: translateY(-3.2rem);
+    }
+    .attribution a { color: hsl(224, 100%, 95%); }
+
+}
+
+@media (prefers-reduced-motion: reduce){
+    details[open] .menu{
+        animation-name: slide-in;
+        animation-duration: 0.2s;
+    }
+    @keyframes slide-in {
+        from{
+            translate: 80vw 0;
+            scale:40% 1;
+        }
+        to{
+            translate:80vw 0;
+            scale: 40% 1;
+        }
+    }
+}
